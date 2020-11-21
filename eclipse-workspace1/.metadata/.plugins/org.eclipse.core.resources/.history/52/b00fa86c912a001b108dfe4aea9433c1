@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="CommonHeader.jsp" %>
+<br/><br/><br/><br/>
+
+<table align="center" cellspacing="4" cellpadding="4">
+<tr>
+<td>Product Id</td>
+<td>Product Name</td>
+<td>Price</td>
+<td>Product Description</td>
+<td>Stock</td>
+<td>Category</td>
+<td>Supplier</td>
+</tr>
+</table>
+
+
+</body>
+</html>

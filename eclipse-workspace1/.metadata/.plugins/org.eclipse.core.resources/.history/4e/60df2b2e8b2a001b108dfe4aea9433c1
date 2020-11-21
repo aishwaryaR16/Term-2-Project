@@ -1,0 +1,39 @@
+package dao;
+import java.sql.*;
+import conn.DBConn;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import conn.DBConn;
+import Model.Product;
+
+public class ProductDAO 
+{
+     Connection conn;
+	public ProductDAO() throws Exception
+	{
+	conn=DBConn.getConn();
+}
+
+	public boolean insertProduct(Product productObj) throws Exception
+	{
+		PreparedStatement psmt=conn.prepareStatement("insert into Product(productname,price,productdesc,stock,category,supplier) values ('?',?,'?',?,'?','?')");
+			
+	psmt.setString(1,productObj.getProductName());
+	psmt.setInt(2,productObj.getPrice());
+	psmt.setString(3,productObj.getDescription());
+	psmt.setInt(4,productObj.getProductId());
+	psmt.setString(5,productObj.getCategory());
+	psmt.setString(6,productObj.getSupplier());
+	
+
+	int row_eff=psmt.executeUpdate();
+	
+	if(row_eff>0)
+		return true;
+	else
+		return false;
+}
+	
+	
+}
+}
